@@ -35,6 +35,14 @@ public class Programa {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+		
+		
+		System.out.println("\n\n=== test 4 : seller insertt====");
+		Seller newSeller = new Seller(null , "Norival Marson" , "marson@bol.com.br" , new Date(),4000.0,department);
+		
+		sellerDao.insert(newSeller);
+		System.out.println("Inser : " + newSeller.getId());
+
 
 	}
 
