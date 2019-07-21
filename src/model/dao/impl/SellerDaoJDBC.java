@@ -110,7 +110,7 @@ public class SellerDaoJDBC implements SellerDao {
 					"FROM seller INNER JOIN department " +
 					"ON seller.DepartmentId = department.Id " +
 					"WHERE DepartmentId = ? "+
-					"ORDER BY Name ");
+					"ORDER BY Name");
 
 			st.setInt(1, department.getId());
 			rs = st.executeQuery();
@@ -119,7 +119,7 @@ public class SellerDaoJDBC implements SellerDao {
 			
 			Map<Integer , Department> map = new HashMap<>();
 			
-			while (rs.next()) {
+			while(rs.next()){
 				
 				Department dep = map.get(rs.getInt("DepartmentId"));
 				
@@ -132,7 +132,7 @@ public class SellerDaoJDBC implements SellerDao {
 				Seller obj =  instentiateSeller(rs,dep);
 				list.add(obj);
 			}
-			return  null ;
+			return  list ;
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
