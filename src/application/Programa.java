@@ -39,9 +39,16 @@ public class Programa {
 		
 		System.out.println("\n\n=== test 4 : seller insertt====");
 		Seller newSeller = new Seller(null , "Norival Marson" , "marson@bol.com.br" , new Date(),4000.0,department);
-		
 		sellerDao.insert(newSeller);
 		System.out.println("Inser : " + newSeller.getId());
+		
+		System.out.println("\n\n=== test 5 : seller updatet====");
+		seller = sellerDao.findById(8);
+		seller.setName("Norival");
+		sellerDao.update(seller);
+		System.out.println("update completo");
+		
+		
 
 
 	}
